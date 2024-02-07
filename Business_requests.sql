@@ -12,7 +12,7 @@ SELECT * , CASE
                 WHEN promo_type = '50% OFF' THEN base_price * 0.5
                 WHEN promo_type = '25% OFF' THEN base_price * 0.75
                 WHEN promo_type = '33% OFF' THEN base_price * 0.67
-                WHEN promo_type = 'BOGOF' THEN base_price / 2
+                WHEN promo_type = 'BOGOF' THEN base_price *1
                 WHEN promo_type = '500 Cashback' THEN base_price - 500
                 ELSE NULL
             END  AS discounted_price
@@ -22,7 +22,7 @@ WITH AB AS (SELECT * , CASE
                 WHEN promo_type = '50% OFF' THEN base_price * 0.5
                 WHEN promo_type = '25% OFF' THEN base_price * 0.75
                 WHEN promo_type = '33% OFF' THEN base_price * 0.67
-                WHEN promo_type = 'BOGOF' THEN base_price / 2
+                WHEN promo_type = 'BOGOF' THEN base_price *1
                 WHEN promo_type = '500 Cashback' THEN base_price - 500
                 ELSE NULL
             END  AS discounted_price
@@ -53,7 +53,7 @@ SELECT
             WHEN fact_events.promo_type = '50% OFF' THEN fact_events.base_price*0.5
             WHEN fact_events.promo_type = '33% OFF' THEN fact_events.base_price* 0.67
             WHEN fact_events.promo_type = '25% OFF' THEN fact_events.base_price*0.75
-            WHEN fact_events.promo_type = 'BOGOF' THEN fact_events.base_price /2 
+            WHEN fact_events.promo_type = 'BOGOF' THEN fact_events.base_price * 1
             WHEN fact_events.promo_type = '500 Cashback' THEN fact_events.base_price -500 
 		    ELSE NULL  
         END * fact_events.`quantity_sold(after_promo)`)/1000000,0),' M'
@@ -99,7 +99,7 @@ WITH C AS (
                 WHEN fact_events.promo_type = '50% OFF' THEN fact_events.base_price * 0.5 * fact_events.`quantity_sold(after_promo)`
                 WHEN fact_events.promo_type = '33% OFF' THEN fact_events.base_price * 0.67 * fact_events.`quantity_sold(after_promo)`
                 WHEN fact_events.promo_type = '25% OFF' THEN fact_events.base_price * 0.75 * fact_events.`quantity_sold(after_promo)`
-                WHEN fact_events.promo_type = 'BOGOF' THEN (fact_events.base_price / 2) * fact_events.`quantity_sold(after_promo)`
+                WHEN fact_events.promo_type = 'BOGOF' THEN (fact_events.base_price *1) * fact_events.`quantity_sold(after_promo)`
                 WHEN fact_events.promo_type = '500 Cashback' THEN (fact_events.base_price - 500) * fact_events.`quantity_sold(after_promo)`
                 ELSE NULL
             END
