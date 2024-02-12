@@ -61,7 +61,7 @@ Imported the dataset into Power BI to begin data preparation.
 Created common measures such as Incremental Sold Unit, Incremental Revenue, Incremental Revenue Percentage, Promo Price,etc.
 Developed visualizations and report pages in Power BI to visualize the data and present key findings.
 Iteratively refined the dashboard layout and visuals to ensure clarity and effectiveness in communicating insights.
-By following these steps, I systematically approached the analysis of the dataset, from data familiarization to visualization and reporting, ensuring a structured and comprehensive exploration of the provided data.
+##### By following these steps, I systematically approached the analysis of the dataset, from data familiarization to visualization and reporting, ensuring a structured and comprehensive exploration of the provided data.
 ### RESULTS/FINDINGS
 #### Store Performance:
 
