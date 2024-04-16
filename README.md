@@ -1,6 +1,6 @@
 # Retail_Promotion_Performance_Analysis
 ### PROJECT OVERVIEW
-AtliQ Mart is a retail giant with over 50 supermarkets in the sourthern region of India. All their 50 stores ran a massive promotion during the Diwali 2023 and Sankranti 2024 (festive time in India) on their AtliQ  branded products. 
+AtliQ Mart is a retail giant with over 50 supermarkets in the southern region of India. All their 50 stores ran a massive promotion during the Diwali 2023 and Sankranti 2024 (festive time in India) on their AtliQ  branded products. 
 
 ### PROBLEM STATEMENT
 The sales director wants to understand which promotion did well and which did not so that they can make informed decisions for their next promotional period.
