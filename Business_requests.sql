@@ -81,8 +81,10 @@ dim_campaigns.campaign_id=fact_events.campaign_id
 
 SELECT 
      category , 
-     (SUM(`quantity_sold(after_promo)`) - SUM(`quantity_sold(before_promo)` ))/SUM(`quantity_sold(before_promo)`)*100 as 'ISU %' ,
-     RANK() OVER( ORDER BY (SUM(`quantity_sold(after_promo)`) - SUM(`quantity_sold(before_promo)` )) / SUM(`quantity_sold(before_promo)`) * 100 DESC ) AS Rank_order
+     (SUM(CASE WHEN A.promo_type ='BOGOF' THEN `quantity_sold(after_promo)`*2
+     ELSE `quantity_sold(after_promo)` END) - SUM(`quantity_sold(before_promo)` ))/SUM(`quantity_sold(before_promo)`)*100 as 'ISU %' ,
+     RANK() OVER( ORDER BY (SUM(CASE WHEN A.promo_type ='BOGOF' THEN `quantity_sold(after_promo)`*2
+     ELSE `quantity_sold(after_promo)` END) - SUM(`quantity_sold(before_promo)` )) / SUM(`quantity_sold(before_promo)`) * 100 DESC ) AS Rank_order
 FROM A 
 WHERE A.campaign_name = 'Diwali' 
 GROUP BY category ORDER BY 'ISU%' DESC;
